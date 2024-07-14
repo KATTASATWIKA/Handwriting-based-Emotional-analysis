@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+a:hover {
+    color: #03e7fc; /* Change link color on hover */
+}
+
+ul {
+    list-style: none;
+}
+
+.active {
+    color: #03e7fc;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.nav-bar {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 30px;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://media.assettype.com/analyticsinsight%2Fimport%2Fwp-content%2Fuploads%2F2021%2F03%2FAI-Brain.jpg');
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 1s ease; /* Smooth transition for background image */
+}
+
+.header-content {
+    margin-bottom: 150px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.header-content h2 {
+    font-size: 4vmin;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background: #03e7fc;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.header-content h1 {
+    font-size: 7vmin;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.ctn {
+    padding: 8px 15px;
+    background: #03e7fc;
+    border-radius: 30px;
+    color: whitesmoke;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for button */
+}
+
+.ctn:hover {
+    background: #0288d1; /* Change button background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+    .menu-btn {
+        display: block;
+    }
+    .nav-bar {
+        padding: 0;
+    }
+
+    .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background: black;
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        transition: all 0.5s ease;
+    }
+
+    .mobile-menu {
+        top: 0;
+        border-bottom-right-radius: 30%;
+    }
+
+    .nav-links li {
+        margin: 30px auto;
+    }
+}
+
+/* Keyframe animation for background image */
+@keyframes slideBackground {
+    0% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+/* Apply animation to header background */
+header {
+    animation: slideBackground 30s infinite alternate;
+}
+
+/* About Section */
+.about-section {
+    background: black;
+    color: whitesmoke;
+    padding: 50px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-content {
+    margin-bottom: 30px;
+}
+
+.about-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+
+/* How It Works Section */
+.procedure-section {
+    padding: 50px 20px;
+    text-align: center;
+    
+}
+
+.procedure-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.procedure-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.procedure-step:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.procedure-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+.arrow-image {
+    width: 80px;
+    height: 80px;
+}
+
+/* Applications Section */
+.applications-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.applications-content {
+    margin-bottom: 30px;
+}
+
+.applications-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.app-image {
+    width: 150px; /* Medium size for result section */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.app-image-small {
+    width: 100px; /* Small size for upload section */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.app-image:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.applications-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-item {
+    width: 200px;
+    padding: 10px;
+    background: #03e7fc;
+    border-radius: 10px;
+    color: black;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for app items */
+}
+
+.app-item:hover {
+    background: #0288d1; /* Change background color on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Container */
+.container {
+    background-color: #121111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Ensure container wraps content */
+    max-width: 70%; /* Set max-width to 70% of parent */
+    margin: 0 auto; /* Center align horizontally */
+    text-align: center; /* Center align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for container */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(0, 247, 255);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for button */
+}
+
+button:hover {
+    background-color: #0288d1; /* Change button background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    animation: slideIn 1s ease-out; /* Slide-in animation */
+}
+
+.upload-box {
+    margin-top: 20px;
+}
+
+.results-section {
+    text-align: center;
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+    padding-top: 200px; /* Adjust the top padding to move the section down */
+}
+
+
+.container {
+    max-width: 600px; /* Adjust as necessary */
+    margin: 0 auto; /* Center align horizontally */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.emotion-image {
+    width: 100%;
+    height:100%
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px); /* Start position */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End position */
+        opacity: 1;
+    }
+}

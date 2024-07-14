@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Mirror</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1 class="logo">MIND MIRROR</h1>
+        <ul class="nav-links">
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#procedure">PROCEDURE</a></li>
+            <li><a href="#lets-try">LET'S TRY</a></li>
+            <li class="ctn"><a href="#">CONTACT</a></li>
+        </ul>
+        <img src="https://static.thenounproject.com/png/356889-200.png" alt="Menu" class="menu-btn">
+    </nav>
+    <section id="results" class="results-section">
+        <center>
+        <h2>Handwriting Emotion Result</h2>
+        <div class="line"></div>
+        <div class="container">
+            <p>Detected Emotion: {{ emotion }}</p>
+            <!-- Emotion image based on detected emotion -->
+            {% if emotion == 'happy' %}
+                <img src="https://st4.depositphotos.com/3367263/20877/v/600/depositphotos_208775448-stock-video-digital-generated-video-smiley-emoji.jpg" alt="Happy" class="emotion-image">
+            {% elif emotion == 'sad' %}
+                <img src="https://i3.wp.com/w0.peakpx.com/wallpaper/879/230/HD-wallpaper-sadness-sad-smiley-black-white.jpg" alt="Sad" class="emotion-image">
+            {% elif emotion == 'anxiety' %}
+                <img src="https://www.shutterstock.com/shutterstock/videos/1102808027/thumb/1.jpg?ip=x480" alt="anxiety" class="emotion-image">
+            {% elif emotion == 'fear' %}
+                <img src="https://www.shutterstock.com/image-photo/man-fear-on-black-background-260nw-1479141557.jpg" alt="Fear" class="emotion-image">
+            {% elif emotion == 'angry' %}
+                <img src="https://t4.ftcdn.net/jpg/07/39/79/49/360_F_739794939_vl7Voeo9m3NQcwPj3HtZoH9B4cBFiX1a.jpg" alt="Angry" class="emotion-image">
+            {% endif %}
+        </div>
+        </center>
+    </section>
+    
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
